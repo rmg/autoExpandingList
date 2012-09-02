@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>jQuery.autoExpandingList demo</title>
+</head>
+<body>
+<form>
+  <fieldset>
+    <legend>Actions (max 3)</legend>
+    <ul id="actionlist">
+      <li>
+        Action: <input type="text" name="action" />
+        Mayfail: <input type="checkbox" name="mayfail" />
+        Cost: <input type="text" size="2" name="cost" />
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Outputs (no max)</legend>
+    <ul id="outputlist">
+      <li><input type="text" name="output" /></li>
+    </ul>
+  </fieldset>
+</form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+  <script src="jQuery.autoExpandingList.js"></script>
+  <script>
+    $(function() {
+      $("#actionlist").autoExpandingList({max: 3});
+      $("#outputlist").autoExpandingList({maxBlank: 1});
+    });
+  </script>
+</body>
+</html>
