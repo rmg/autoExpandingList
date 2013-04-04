@@ -44,7 +44,7 @@
 
         // Keep track of which element has cursor focus so we don't delete it
         var currentFocus;
-        $("a, input").live("focus", function () {
+        $("a, input").on("focus", function () {
             currentFocus = this;
         });
 
@@ -122,7 +122,7 @@
                     }
                 };
 
-                $("input", this).live("change focus blur keydown keyup", checkAndExpand).each(checkAndExpand);
+                $(this).on("change focus blur keydown keyup", "input", checkAndExpand).each(checkAndExpand);
             });
 
             return this;
